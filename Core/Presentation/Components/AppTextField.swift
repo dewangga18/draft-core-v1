@@ -1,3 +1,10 @@
+//
+//  AppTextField.swift
+//  Core
+//
+//  Created by aaronevanjulio on 12/06/26.
+//
+
 import SwiftUI
 
 /// Reusable text field with icon, secure toggle, and inline error.

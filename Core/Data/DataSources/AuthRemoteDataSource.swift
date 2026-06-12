@@ -1,3 +1,10 @@
+//
+//  AuthRemoteDataSource.swift
+//  Core
+//
+//  Created by aaronevanjulio on 12/06/26.
+//
+
 import Foundation
 
 /// Protocol for the auth remote data source.

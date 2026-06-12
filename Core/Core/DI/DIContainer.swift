@@ -1,3 +1,10 @@
+//
+//  DIContainer.swift
+//  Core
+//
+//  Created by aaronevanjulio on 12/06/26.
+//
+
 import Foundation
 
 /// Dependency injection container.
@@ -49,7 +56,7 @@ final class DIContainer {
     lazy var settingsViewModel = SettingsViewModel(storage: storage)
 
     // MARK: – Navigation
-    lazy var navState = AppNavigationState.shared
+    lazy var navigationService = NavigationService.shared
 
     private init() {}
 }

@@ -1,3 +1,10 @@
+//
+//  AppStrings.swift
+//  Core
+//
+//  Created by aaronevanjulio on 12/06/26.
+//
+
 /// All localizable strings in one place.
 enum AppStrings {
 

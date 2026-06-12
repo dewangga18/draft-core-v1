@@ -1,3 +1,10 @@
+//
+//  AppRouter.swift
+//  Core
+//
+//  Created by aaronevanjulio on 12/06/26.
+//
+
 import SwiftUI
 import OwlNav
 
@@ -8,18 +15,6 @@ public enum AppRoute: Hashable, Equatable {
     case settings
     case login
     case register
-}
-
-/// Navigation state managing active navigation stacks.
-@MainActor
-public final class AppNavigationState: ObservableObject {
-    public static let shared = AppNavigationState()
-    
-    // Independent navigation stacks for main app flow and auth flow
-    public let mainOwl = InOwl<AppRoute>(initial: .home)
-    public let authOwl = InOwl<AppRoute>(initial: .login)
-    
-    private init() {}
 }
 
 /// Root view that listens to AuthViewModel and switches between auth / main flows.
@@ -49,10 +44,10 @@ public struct AppRootView: View {
 
 /// Main navigation host using OwlNav.
 struct MainNavigationView: View {
-    private var navState = DIContainer.shared.navState
+    private var navigationService = NavigationService.shared
 
     var body: some View {
-        OwlContainer(navState.mainOwl) { route in
+        OwlContainer(navigationService.mainOwl) { route in
             Group {
                 switch route {
                 case .home:
@@ -75,10 +70,10 @@ struct MainNavigationView: View {
 
 /// Auth navigation host using OwlNav.
 struct AuthFlowView: View {
-    private var navState = DIContainer.shared.navState
+    private var navigationService = NavigationService.shared
 
     var body: some View {
-        OwlContainer(navState.authOwl) { route in
+        OwlContainer(navigationService.authOwl) { route in
             Group {
                 switch route {
                 case .login:

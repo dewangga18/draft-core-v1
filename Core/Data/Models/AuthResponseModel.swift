@@ -1,3 +1,10 @@
+//
+//  AuthResponseModel.swift
+//  Core
+//
+//  Created by aaronevanjulio on 12/06/26.
+//
+
 import Foundation
 
 /// Auth response from server.

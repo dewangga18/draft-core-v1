@@ -1,3 +1,10 @@
+//
+//  AuthViewModel.swift
+//  Core
+//
+//  Created by aaronevanjulio on 12/06/26.
+//
+
 import SwiftUI
 
 /// BLoC equivalent for authentication.

@@ -1,10 +1,17 @@
+//
+//  HomeView.swift
+//  Core
+//
+//  Created by aaronevanjulio on 12/06/26.
+//
+
 import SwiftUI
 
 /// Home screen.
 struct HomeView: View {
 
     private var authVM = DIContainer.shared.authViewModel
-    private var navState = DIContainer.shared.navState
+    private var navigationService = DIContainer.shared.navigationService
     @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
@@ -54,7 +61,7 @@ struct HomeView: View {
             // Navigate
             Section("Navigate") {
                 Button {
-                    navState.mainOwl.push(.profile)
+                    navigationService.navigateMain(to: .profile)
                 } label: {
                     HStack {
                         SectionTile(icon: "person", label: AppStrings.profile)
@@ -65,7 +72,7 @@ struct HomeView: View {
                     }
                 }
                 Button {
-                    navState.mainOwl.push(.settings)
+                    navigationService.navigateMain(to: .settings)
                 } label: {
                     HStack {
                         SectionTile(icon: "gear", label: AppStrings.settings)
@@ -95,7 +102,7 @@ struct HomeView: View {
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
-                    navState.mainOwl.push(.profile)
+                    navigationService.navigateMain(to: .profile)
                 } label: {
                     Image(systemName: "person.circle")
                         .font(.system(size: 18))
@@ -103,7 +110,7 @@ struct HomeView: View {
             }
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
-                    navState.mainOwl.push(.settings)
+                    navigationService.navigateMain(to: .settings)
                 } label: {
                     Image(systemName: "gear")
                         .font(.system(size: 18))

@@ -1,3 +1,10 @@
+//
+//  User.swift
+//  Core
+//
+//  Created by aaronevanjulio on 12/06/26.
+//
+
 import Foundation
 
 /// Domain entity — pure Swift, zero framework dependencies.
