@@ -11,7 +11,7 @@ import SwiftUI
 struct SettingsView: View {
 
     private var settingsVM = DIContainer.shared.settingsViewModel
-    private var navState = DIContainer.shared.navState
+    private var navigationService = DIContainer.shared.navigationService
 
     var body: some View {
         List {
@@ -74,7 +74,7 @@ struct SettingsView: View {
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
                 Button {
-                    navState.mainOwl.pop()
+                    navigationService.popMain()
                 } label: {
                     Image(systemName: "chevron.left")
                         .font(.system(size: 16, weight: .semibold))

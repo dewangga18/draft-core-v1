@@ -11,7 +11,7 @@ import SwiftUI
 struct ProfileView: View {
 
     private var authVM = DIContainer.shared.authViewModel
-    private var navState = DIContainer.shared.navState
+    private var navigationService = DIContainer.shared.navigationService
 
     var body: some View {
         List {
@@ -69,7 +69,7 @@ struct ProfileView: View {
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
                 Button {
-                    navState.mainOwl.pop()
+                    navigationService.popMain()
                 } label: {
                     Image(systemName: "chevron.left")
                         .font(.system(size: 16, weight: .semibold))

@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import OwlNav
 
 @main
 struct CoreApp: App {
 
-    // Wire up the DI container once at app launch
-    @State private var container = DIContainer.shared
+    init() {
+        OwlInject.initFunc()
+    }
 
     var body: some Scene {
         WindowGroup {
