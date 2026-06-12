@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8496CCE12FDBD62700654FE8 /* CoreSPM in Frameworks */ = {isa = PBXBuildFile; productRef = 8496CCE02FDBD62700654FE8 /* CoreSPM */; };
 		8496CCE42FDBD74000654FE8 /* CoreSPM in Frameworks */ = {isa = PBXBuildFile; productRef = 8496CCE32FDBD74000654FE8 /* CoreSPM */; };
+		84ECEAD62FDBDEB9005FEF89 /* CoreSPM in Frameworks */ = {isa = PBXBuildFile; productRef = 84ECEAD52FDBDEB9005FEF89 /* CoreSPM */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84ECEAD62FDBDEB9005FEF89 /* CoreSPM in Frameworks */,
 				8496CCE42FDBD74000654FE8 /* CoreSPM in Frameworks */,
 				8496CCE12FDBD62700654FE8 /* CoreSPM in Frameworks */,
 			);
@@ -74,6 +76,7 @@
 			packageProductDependencies = (
 				8496CCE02FDBD62700654FE8 /* CoreSPM */,
 				8496CCE32FDBD74000654FE8 /* CoreSPM */,
+				84ECEAD52FDBDEB9005FEF89 /* CoreSPM */,
 			);
 			productName = Core;
 			productReference = 8496CC4D2FDBAB7500654FE8 /* Core.app */;
@@ -104,7 +107,7 @@
 			mainGroup = 8496CC442FDBAB7500654FE8;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				8496CCE22FDBD74000654FE8 /* XCLocalSwiftPackageReference "CoreSPM" */,
+				84ECEAD42FDBDEB9005FEF89 /* XCLocalSwiftPackageReference "CoreSPM" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 8496CC4E2FDBAB7500654FE8 /* Products */;
@@ -346,7 +349,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		8496CCE22FDBD74000654FE8 /* XCLocalSwiftPackageReference "CoreSPM" */ = {
+		84ECEAD42FDBDEB9005FEF89 /* XCLocalSwiftPackageReference "CoreSPM" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = CoreSPM;
 		};
@@ -358,6 +361,10 @@
 			productName = CoreSPM;
 		};
 		8496CCE32FDBD74000654FE8 /* CoreSPM */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CoreSPM;
+		};
+		84ECEAD52FDBDEB9005FEF89 /* CoreSPM */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = CoreSPM;
 		};
