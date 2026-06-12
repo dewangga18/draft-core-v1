@@ -6,27 +6,16 @@
 //
 
 import SwiftUI
-import SwiftData
 
 @main
 struct CoreApp: App {
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
-        do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
-        }
-    }()
+    // Wire up the DI container once at app launch
+    @State private var container = DIContainer.shared
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AppRootView()
         }
-        .modelContainer(sharedModelContainer)
     }
 }

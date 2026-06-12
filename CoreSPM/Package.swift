@@ -1,26 +1,38 @@
-// swift-tools-version: 6.2
-// The swift-tools-version declares the minimum version of Swift required to build this package.
-
+// swift-tools-version: 5.9
 import PackageDescription
 
 let package = Package(
     name: "CoreSPM",
+    platforms: [
+        .iOS(.v17),
+    ],
     products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "CoreSPM",
             targets: ["CoreSPM"]
         ),
     ],
+    dependencies: [
+        .package(url: "https://github.com/onevcat/Kingfisher.git", exact: "8.9.0"),
+        .package(url: "https://github.com/airbnb/lottie-spm.git", exact: "4.6.0"),
+        .package(url: "https://github.com/exyte/SVGView.git", exact: "1.0.6"),
+        .package(url: "https://github.com/exyte/PopupView.git", exact: "5.0.1"),
+        .package(url: "https://github.com/dewangga18/OwlNav.git", exact: "0.0.5"),
+        .package(url: "https://github.com/realm/realm-swift.git", exact: "20.0.4"),
+        .package(url: "https://github.com/Swinject/Swinject.git", exact: "2.10.0")
+    ],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "CoreSPM"
-        ),
-        .testTarget(
-            name: "CoreSPMTests",
-            dependencies: ["CoreSPM"]
+            name: "CoreSPM",
+            dependencies: [
+                .product(name: "Kingfisher", package: "Kingfisher"),
+                .product(name: "Lottie", package: "lottie-spm"),
+                .product(name: "SVGView", package: "SVGView"),
+                .product(name: "PopupView", package: "PopupView"),
+                .product(name: "OwlNav", package: "OwlNav"),
+                .product(name: "RealmSwift", package: "realm-swift"),
+                .product(name: "Swinject", package: "Swinject")
+            ],
         ),
     ]
 )
