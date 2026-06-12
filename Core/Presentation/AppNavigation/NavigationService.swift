@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import Observation
 import OwlNav
 
 @MainActor
-public final class NavigationService: ObservableObject {
+@Observable
+public final class NavigationService {
     public static let shared = NavigationService()
     
     // Independent navigation stacks for main app flow and auth flow
